@@ -17,10 +17,10 @@ typedef struct Stack{
 int stack_init(Stack *stack, size_t len);
 
 /* Check if the stack is full*/
-int isFull(Stack *stack);
+int isFull(const Stack *stack);
 
 /* Check if the stack is empty*/
-int isEmpty(Stack *stack);
+int isEmpty(const Stack *stack);
 
 /*Push value at the top index*/
 int push(Stack *stack, const int value);

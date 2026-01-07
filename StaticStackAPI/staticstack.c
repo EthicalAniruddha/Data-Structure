@@ -20,13 +20,13 @@ int stack_init(Stack *stack, size_t len) {
 }
 
 /* Returns 1 if true else returns 0*/
-int isFull(Stack *stack) {
+int isFull(const Stack *stack) {
     if(stack->top == (ptrdiff_t)stack->len - 1) return 1;
     return 0;
 }
 
 /* Returns 1 if true else returns 0*/
-int isEmpty(Stack *stack) {
+int isEmpty(const Stack *stack) {
     if(stack->top == -1) return 1;
     return 0;
 }
@@ -60,6 +60,7 @@ int peek(Stack *stack) {
 /* Print all the values in the stack*/
 int traverse(const Stack *stack) {
     if(!stack->data) return -1;
+    if(isEmpty(stack)) return -1;
     for(ptrdiff_t i = (ptrdiff_t)stack->top; i >= 0; --i) {
         printf("%d\n",stack->data[(size_t)i]);
     }
@@ -68,6 +69,7 @@ int traverse(const Stack *stack) {
 
 /* Free the stack*/
 void free_stack(Stack *stack) {
+    if(!stack) return;
     free(stack->data);
     stack->data = NULL;
     stack->len = 0;
