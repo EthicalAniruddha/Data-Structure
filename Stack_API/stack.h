@@ -26,9 +26,12 @@ typedef struct {
 } StackValue;
 
 /* Dyanamic Stack*/
-typedef struct {
+typedef struct Stack{
+    /*Some array of data*/
     StackValue *data;
+    /*Points to the top of the array*/
     ptrdiff_t top;
+    /*Length of the stack*/
     size_t len;
 } Stack;
 

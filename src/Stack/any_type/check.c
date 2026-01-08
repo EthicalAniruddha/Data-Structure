@@ -70,6 +70,8 @@ int main(void) {
             printf("\n");
             break;
 
+        case 5: printf("\nSize of stack: %zu\n\n",sizeof(StackValue)); break;
+        
         case 0:
             d_free_stack(&stack);
             return 0;
