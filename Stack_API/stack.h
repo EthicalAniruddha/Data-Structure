@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-/* For dynamic exeperiance value types!*/
+/* For dynamic experiance value types!*/
 typedef enum {
     VAL_BOOL,
     VAL_CHAR,
@@ -27,7 +27,7 @@ typedef struct {
 
 /* Dyanamic Stack*/
 typedef struct Stack{
-    /*Some array of data*/
+    /*Array of StackValue to store multiple datatypes*/
     StackValue *data;
     /*Points to the top of the array*/
     ptrdiff_t top;
@@ -52,7 +52,7 @@ int stack_d_init(Stack *stack, size_t len);
 bool d_isFull(const Stack *stack);
 /* Check if the stack is empty or not*/
 bool d_isEmpty(const Stack *stack);
-/* Push a dynamic value into the stack*/
+/* Push a value into the stack*/
 int d_push(Stack *stack, StackValue val);
 /* Remove the value from top*/
 StackValue d_pop(Stack *stack);
